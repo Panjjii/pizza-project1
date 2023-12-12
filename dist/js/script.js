@@ -150,14 +150,14 @@
               price -= option.price;
             }
           }
-          /* const piece = thisProduct.imageWrapper.querySelector(.paramID-optionID);
-          if (piece != null){
-            if (piece.default){
-              piece.classNames.menuProduct.imageVisible;
-            } else if (!piece.default){
-
+          const piece = thisProduct.imageWrapper.querySelector('.' + paramID + '-' + optionID);
+          if (piece){
+            if (formData[paramID] && formData[paramID].includes(optionID)){
+              piece.classList.add(classNames.menuProduct.imageVisible);
+            } else {
+              piece.classList.remove(classNames.menuProduct.imageVisible);
             }
-          } */
+          }
         }
       }
       /* update calculated price in the HTML */
