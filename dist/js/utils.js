@@ -1,6 +1,6 @@
-import {app} from './app.js';
+/* global Handlebars, dataSource */
 
-export const utils = {}; // eslint-disable-line no-unused-vars
+const utils = {}; // eslint-disable-line no-unused-vars
 
 utils.createDOMFromHTML = function(htmlString) {
   let div = document.createElement('div');
@@ -38,8 +38,8 @@ utils.serializeFormToObject = function(form){
 
 utils.convertDataSourceToDbJson = function(){
   const productJson = [];
-  for(let key in app.data.products){
-    productJson.push(Object.assign({id: key}, app.data.products[key]));
+  for(let key in dataSource.products){
+    productJson.push(Object.assign({id: key}, dataSource.products[key]));
   }
 
   console.log(JSON.stringify({product: productJson, order: []}, null, '  '));
